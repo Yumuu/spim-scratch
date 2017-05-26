@@ -7,8 +7,14 @@ Created on Thu May  4 16:25:34 2017
 @author: d-v-b
 """
 # List of directories with images to compress
+
+# add path to fish to sys.path
+import sys
+fish_path = 'C:\\Users\muy\\Documents\\GitHub\\fish'
+sys.path.append(fish_path)
 from glob import glob
 from os.path import sep
+
 base_dirs = glob('F:/davis/20170430/*')
 
 for ind, val in enumerate(base_dirs):
