@@ -15,7 +15,7 @@ sys.path.append(fish_path)
 from glob import glob
 from os.path import sep
 
-base_dirs = glob('F:/davis/20170430/*')
+base_dirs = glob('X:\\YuMu\\tmp\\20160630\\fish2\\*')
 
 for ind, val in enumerate(base_dirs):
     base_dirs[ind] += sep
@@ -34,7 +34,7 @@ def process_images(base_dir):
     
     fnames = glob(base_dir + 'TM*.stack')
     if len(fnames) > 0:
-        num_workers = cpu_count()
+        num_workers = cpu_count()-2
         p = Pool(num_workers)
         p.map(convert, fnames)
         p.close()
